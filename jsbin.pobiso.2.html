@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by kovacsjok (http://jsbin.com/pobiso/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+ <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina|Bungee+Inline|Coda|Luckiest+Guy" rel="stylesheet">
+  <title>ColorClock</title>
+<style id="jsbin-css">
+* { margin: 0; padding: 0; }
+html, body {
+  height: 93%;
+}
+
+#clock {
+  text-align: center;
+font-family: 'Bungee Inline', cursive;
+font-family: 'Baloo Bhaina', cursive;
+font-family: 'Luckiest Guy', cursive;
+font-family: 'Coda', cursive;
+  font-size: 120px;
+  top: 50%;
+  position: relative;
+  color: ivory;
+    }
+</style>
+</head>
+<body>
+  <div id="clock">10:11:12</div>
+<script id="jsbin-javascript">
+function szinesOra() {
+var date = new Date();
+var hours = date.getHours();
+
+if (hours < 10) {
+  hours = '0' + seconds;
+}
+var minutes = date.getMinutes();
+if (minutes < 10) {
+  minutes = '0' + minutes;
+}
+var seconds = date.getSeconds();
+if (seconds < 10) {
+seconds = '0' + seconds;
+}
+var clockFace = hours + ':' + minutes + ':' + seconds;
+document.getElementById('clock').innerHTML = clockFace;
+  var hexaSzinek = '#' + minutes + hours + seconds;
+  document.body.style.background = hexaSzinek;
+  setTimeout(function() {
+    szinesOra();
+  }, 1000);
+  }
+
+szinesOra();
+</script>
+</body>
+</html>
